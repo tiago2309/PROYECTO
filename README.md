@@ -2,14 +2,14 @@
 ## TopograficTool - Herramienta para Cálculos Topográficos en Ingeniería Civil
 ## Autores
 - Santiago Ramos Barriga
-- Camila Palomo
+- Maria Camila Palomo
 
 Curso: Programación de Computadores  
 Grupo: 404 CNF (Chill Not Found)  
 Universidad Nacional de Colombia
 
 ## Problema
-En la Ingeniería Civil, una de las actividades fundamentales en proyectos de obras civiles (como carreteras, redes de acueducto, edificaciones, puentes, etc.) es la topografía, que permite conocer y representar el terreno de forma precisa. Actualmente estamos cursando la asignatura de Geomática Básica dónde hemos encontrdo dificultades a la hora de hallar soluciones rapidas a los problemas dados, ya que esta toma de datos se realiza muchas veces manualmente o en hojas de cálculo, lo cual consume tiempo y puede generar errores. Se necesita una herramienta por consola que automatice este proceso para estudiantes y técnicos.
+En la Ingeniería Civil, una de las actividades fundamentales en proyectos de obras civiles (como carreteras, redes de acueducto, edificaciones, puentes, etc.) es la topografía, que permite conocer y representar el terreno de forma precisa. Actualmente estamos cursando la asignatura de Geomática Básica dónde hemos encontrdo dificultades a la hora de hallar soluciones rapidas a los problemas dados, ya que la toma de datos se realiza muchas veces manualmente o en hojas de cálculo, lo cual consume tiempo y puede generar errores. Se necesita una herramienta por consola que automatice este proceso para estudiantes y técnicos.
 
 ## Solución
 La idea de este programa es crear una herramienta por consola en Python llamada TopograficTool, que permita a los usuarios calcular coordenadas, cierres, y correcciones de poligonales (abiertas y cerradas) y radiaciones (simples y dobles), usando datos ingresados manualmente o desde archivos ".txt" o ".csv".
