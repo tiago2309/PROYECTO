@@ -79,3 +79,31 @@ flowchart TD
     O --> R
 
 ```
+
+Boceto de código:
+```
+import math
+
+def ingresar_datos_estacion():
+    """Solicita las coordenadas de la estación base."""
+    norte = float(input("Ingrese coordenada Norte de la estación: "))
+    este = float(input("Ingrese coordenada Este de la estación: "))
+    return norte, este
+
+def ingresar_datos_punto():
+    """Solicita la distancia y el azimut hacia un nuevo punto."""
+    distancia = float(input("Ingrese la distancia al punto (m): "))
+    azimut_grados = float(input("Ingrese el azimut (en grados): "))
+    return distancia, azimut_grados
+
+def calcular_coordenadas_apoyo(norte_est, este_est, distancia, azimut):
+    """Calcula las coordenadas de un punto a partir de la estación y el azimut."""
+    azimut_rad = math.radians(azimut)
+    delta_norte = distancia * math.cos(azimut_rad) # Ecuación para calcular la proyección en Norte
+    delta_este = distancia * math.sin(azimut_rad) # Ecuacuón para calcular la proyección en Este
+    nuevo_norte = norte_est + delta_norte # Suma de nortes para que quede positivo
+    nuevo_este = este_est + delta_este # Suma de estes para que quede positivo
+    return nuevo_norte, nuevo_este
+
+
+```
