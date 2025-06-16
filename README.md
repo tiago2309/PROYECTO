@@ -52,3 +52,30 @@ flowchart TD
 
     C5 --> Z[Fin]
 ```
+## Diagrama preliminar para radiación simple    
+Presentamos el ejemplo de solución para el caso de radiación simple, donde se ingresan las distancias, ángulos (azimut) y coordenadas de apoyo, y a partir de estos datos se calculan las proyecciones en norte y este, las coordenadas de cada punto, y finalmente el área del polígono formado. Esta área se convierte automáticamente en hectáreas y fanegadas.
+
+La estructura y lógica aplicada en este ejemplo está pensada para extenderse fácilmente a otros métodos, como la radiación doble, la poligonal cerrada y la poligonal abierta, obviamente, cada método requiere ciertos ajustes y condiciones específicas, pero la base del procedimiento (proyecciones, coordenadas, y cálculo de áreas) se mantiene. De esta manera el diagrama de flujo que representa el proceso completo es el siguiente:    
+```mermaid
+flowchart TD
+    A[Inicio] --> B[Ingresar datos de estación]
+    B --> C[Obtener distancias, azimut y coordenadas de apoyo]
+    C --> E[Proy. norte = distancia por coseno del azimut]
+    C --> F[Proy. este = distancia por seno del azimut]
+    E --> G[Proy. norte más coord. = norte de apoyo]
+    F --> H[Proy. este más coord. = este de apoyo]
+    G --> I[Guardar coord. norte del punto]
+    H --> J[Guardar coord. este del punto]
+    I --> K{¿Hay más puntos?}
+    J --> K
+    K -->|Sí| C
+    K -->|No| L[Sumar N1 por E2 menos N2 por E1]
+    L --> M[Dividir resultado entre 2 para hallar área]
+    M --> N[Convertir área a hectáreas]
+    N --> O[Guardar área en hectáreas]
+    N --> P[Convertir hectáreas a fanegadas]
+    P --> Q[Guardar área en fanegadas]
+    Q --> R[Fin]
+    O --> R
+
+```
